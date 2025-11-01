@@ -80,6 +80,11 @@ p {
 	font-family: 'JetBrains Mono', monospace;
 }
 
+.skills:hover {
+	transform: translateY(-10px);
+	border-color: var(--blue1);
+}
+
 .card-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
