@@ -6,12 +6,29 @@
 }
 
 body {
-	background-color: var(--bg);
-	color: var(--fg);
+	/* background-color: var(--bg); */
+	/* color: var(--fg); */
 	font-family: 'Inter', sans-serif;
 	line-height: 1.6;
 	font-size: 16px;
 	padding-bottom: 3rem;
+
+	background: #0d1117;
+	background-image: radial-gradient(circle at 20% 20%, rgba(80, 250, 123, 0.05), transparent 50%),
+		radial-gradient(circle at 80% 80%, rgba(139, 233, 253, 0.05), transparent 50%);
+	background-repeat: no-repeat;
+	background-size: cover;
+	animation: moveBG 20s linear infinite;
+}
+
+h2 {
+	text-shadow: 1px 1px #343434;
+
+}
+
+.name {
+	font-family: 'JetBrains Mono', monospace;
+	text-shadow: 2px 2px #434343;
 }
 
 .container {
@@ -44,7 +61,7 @@ body {
 .subtitle {
 	color: var(--gray4);
 	font-family: 'JetBrains Mono', monospace;
-	font-size: 0.95rem;
+	font-size: 1.1rem;
 }
 
 section {
@@ -71,18 +88,21 @@ p {
 
 .skills li {
 	background: var(--black1);
-	border: 1px solid var(--gray2);
+	border: 1px solid transparent;
+	border-color: var(--gray2);
 	display: inline-block;
-	padding: 0.4rem 0.8rem;
+	padding: 1rem;
 	margin: 0.25rem;
-	border-radius: 6px;
+	border-radius: 10px;
 	color: var(--cyan-base);
 	font-family: 'JetBrains Mono', monospace;
+	transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.5s ease;
 }
 
-.skills:hover {
-	transform: translateY(-10px);
+.skills li:hover {
+	transform: scale(1.17);
 	border-color: var(--blue1);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
 .card-grid {
@@ -98,16 +118,18 @@ p {
 	border-radius: 10px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 	transition: transform 0.2s ease, border-color 0.2s ease;
+	margin-bottom: 1rem;
 }
 
 .card:hover {
-	transform: translateY(-10px);
-	border-color: var(--blue1);
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 12px;
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .card h3 {
 	color: var(--white1);
-	margin-bottom: 0.5rem;
 }
 
 .button {
@@ -115,7 +137,7 @@ p {
 	background: var(--blue0);
 	color: var(--white2);
 	padding: 0.4rem 0.8rem;
-	border-radius: 6px;
+	border-radius: 9px;
 	text-decoration: none;
 	font-family: 'JetBrains Mono', monospace;
 	font-size: 0.9rem;
@@ -126,31 +148,11 @@ p {
 	background: var(--blue1);
 }
 
-/* Contact */
-.contact-list {
-	list-style: none;
-	padding-left: 0;
-}
-
-.contact-list li {
-	margin-bottom: 0.4rem;
-}
-
-.contact-list a {
-	color: var(--cyan-base);
-	text-decoration: none;
-}
-
-.contact-list a:hover {
-	color: var(--cyan-bright);
-	text-decoration: underline;
-}
-
-/* Footer */
 .footer {
 	text-align: center;
 	padding: 1rem;
 	color: var(--gray4);
 	border-top: 1px solid var(--gray2);
 	font-size: 0.85rem;
+	font-family: 'JetBrains Mono', monospace;
 }
