@@ -6,20 +6,41 @@
 }
 
 body {
-	/* background-color: var(--bg); */
-	/* color: var(--fg); */
+	background-color: var(--bg);
+	color: var(--fg);
 	font-family: 'Inter', sans-serif;
 	line-height: 1.6;
 	font-size: 16px;
 	padding-bottom: 3rem;
-
-	background: #0d1117;
-	background-image: radial-gradient(circle at 20% 20%, rgba(80, 250, 123, 0.05), transparent 50%),
-		radial-gradient(circle at 80% 80%, rgba(139, 233, 253, 0.05), transparent 50%);
-	background-repeat: no-repeat;
-	background-size: cover;
-	animation: moveBG 20s linear infinite;
 }
+
+/*-------BACKGROUND EFFECTS BLOCK-----------------------------------------------------*/
+body::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.04), transparent 70%),
+		radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.04), transparent 70%);
+	background-size: 200% 200%;
+	animation: fogMove 30s ease-in-out infinite;
+	pointer-events: none;
+}
+
+@keyframes fogMove {
+	0% {
+		background-position: 0% 0%, 100% 100%;
+	}
+
+	50% {
+		background-position: 100% 100%, 0% 0%;
+	}
+
+	100% {
+		background-position: 0% 0%, 100% 100%;
+	}
+}
+
+/*------------------------------------------------------------------------------------*/
 
 h2 {
 	text-shadow: 1px 1px #343434;
