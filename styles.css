@@ -59,10 +59,10 @@ body::before {
 	content: "";
 	position: fixed;
 	inset: 0;
-	background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.04), transparent 45%),
-		radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.04), transparent 45%);
+	background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.05), transparent 55%),
+		radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.05), transparent 55%);
 	background-size: 200% 200%;
-	animation: fogMove 30s ease-in-out infinite;
+	animation: fogMove 29s ease-in-out infinite;
 	pointer-events: none;
 }
 
